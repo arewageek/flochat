@@ -17,13 +17,13 @@ Flochat is a high-performance, customizable React component designed to integrat
 Install the package and its required peer dependencies:
 
 ```bash
-npm install @arewageek/flochat framer-motion lucide-react
+npm install @flochat/react framer-motion lucide-react
 ```
 
 ## Quick Start
 
 ```tsx
-import { Flochat } from "@arewageek/flochat";
+import { Flochat } from "@flochat/react";
 
 const App = () => (
   <Flochat

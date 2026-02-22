@@ -1,5 +1,5 @@
 {
-  "name": "@arewageek/flochat",
+  "name": "@flochat/react",
   "version": "1.0.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -17,13 +17,15 @@
     "lucide-react": "^0.539.0"
   },
   "peerDependencies": {
-    "react": ">=18",
-    "react-dom": ">=18"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "tsup": "^8.0.0",
     "typescript": "^5.0.0",
     "@types/react": "^18.0.0",
-    "react": "^18.0.0"
+    "@types/react-dom": "^18.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   }
 }
