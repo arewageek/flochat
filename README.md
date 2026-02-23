@@ -1,26 +1,33 @@
-# Flochat
+# Flochat 🚀
 
-Professional Floating Social Contact Component for React Applications.
+**Premium Floating Social Contact Component for modern React applications.**
 
-Flochat is a high-performance, customizable React component designed to integrate social media and contact links into web applications with a refined user experience. It provides a non-intrusive interface for users to connect via various platforms.
+Flochat is a high-performance, customizable React component designed to integrate social media and contact links into web applications with a refined user experience. It provides a non-intrusive yet high-impact interface for users to connect via various platforms.
 
-## Key Features
+[![NPM Version](https://img.shields.io/npm/v/@flochat/react?color=blue&style=flat-square)](https://www.npmjs.com/package/@flochat/react)
+[![Bundle Size](https://img.shields.io/bundlephobia/minzip/@flochat/react?style=flat-square)](https://bundlephobia.com/package/@flochat/react)
 
-- **Configurable Layouts**: Supports Multiple expansion styles including Stack, Fan, and Grid.
-- **Aesthetic Versatility**: Includes a curated set of professional gradients and support for custom branding.
-- **Extensive Platform Support**: Pre-configured for major platforms including WhatsApp, LinkedIn, Twitter, Instagram, GitHub, and more.
-- **Technical Excellence**: Optimized for performance, fully responsive, and compatible with both light and dark mode architectures.
-- **Modern Stack**: Built with React, Framer Motion for fluid transitions, and Lucide React for iconography.
+---
 
-## Installation
+## ✨ Features
 
-Install the package and its required peer dependencies:
+- **Multiple Expansion Styles**: Support for **Stack**, **Fan**, and **Matrix Grid** layouts.
+- **Visual Versatility**: 15+ curated professional gradients and custom branding support.
+- **Universal Platform Support**: Pre-configured for WhatsApp, LinkedIn, Twitter, Instagram, GitHub, GitLab, and more.
+- **Technical Excellence**: Built with Framer Motion for liquid transitions, fully responsive, and tree-shakeable.
+- **Adaptive Theme**: Seamless compatibility with both light and dark mode architectures.
+
+## 📦 Installation
 
 ```bash
-npm install @flochat/react framer-motion lucide-react
+# Using npm
+npm install @flochat/react
+
+# Using bun
+bun add @flochat/react
 ```
 
-## Quick Start
+## 🚀 Quick Start
 
 ```tsx
 import { Flochat } from "@flochat/react";
@@ -28,14 +35,16 @@ import { Flochat } from "@flochat/react";
 const App = () => (
   <Flochat
     position="bottom-right"
+    animationStyle="stack"
+    color="blue"
     socialLinks={[
+      { platform: "whatsapp", url: "https://wa.me/...", label: "WhatsApp" },
       {
         platform: "linkedin",
         url: "https://linkedin.com/in/...",
         label: "LinkedIn",
       },
-      { platform: "whatsapp", url: "https://wa.me/...", label: "WhatsApp" },
-      { platform: "email", url: "mailto:support@example.com", label: "Email" },
+      { platform: "email", url: "mailto:hello@example.com", label: "Email" },
     ]}
   />
 );
@@ -43,21 +52,25 @@ const App = () => (
 export default App;
 ```
 
-## API Reference
+---
+
+## 🛠️ API Reference
 
 ### Flochat Props
 
-| Property         | Type                                                    | Default          | Description                                                 |
-| :--------------- | :------------------------------------------------------ | :--------------- | :---------------------------------------------------------- |
-| `size`           | `'sm' \| 'md' \| 'lg' \| 'xl'`                          | `'md'`           | Specifies the dimensions of the component.                  |
-| `position`       | `'bottom-right' \| 'bottom-left'`                       | `'bottom-right'` | Determines the anchored position on the viewport.           |
-| `socialLinks`    | `SocialLink[]`                                          | `[]`             | Array of contact and social link objects.                   |
-| `animationStyle` | `'fan' \| 'stack' \| 'grid'`                            | `'stack'`        | The animation pattern for menu expansion.                   |
-| `color`          | `string`                                                | `'blue'`         | Preset gradient name or `'custom'`.                         |
-| `showLabels`     | `boolean`                                               | `false`          | When enabled, displays text labels alongside icons.         |
-| `toggleIcon`     | `'share' \| 'message' \| 'zap' \| 'sparkles' \| 'grid'` | `'share'`        | The primary button icon.                                    |
-| `brandColors`    | `boolean`                                               | `false`          | If true, uses official platform colors for contact buttons. |
-| `bottomOffset`   | `number`                                                | `32`             | Adjusts the vertical offset from the bottom.                |
+| Property         | Type                                                    | Default          | Description                                               |
+| :--------------- | :------------------------------------------------------ | :--------------- | :-------------------------------------------------------- |
+| `socialLinks`    | `SocialLink[]`                                          | `[]`             | **Required.** Array of contact and social link objects.   |
+| `size`           | `'sm' \| 'md' \| 'lg' \| 'xl'`                          | `'md'`           | Dimensions of the component.                              |
+| `position`       | `'bottom-right' \| 'bottom-left'`                       | `'bottom-right'` | Fixed position on the viewport.                           |
+| `bottomOffset`   | `number`                                                | `32`             | Vertical offset from the viewport floor (pixels).         |
+| `color`          | `string`                                                | `'blue'`         | Preset gradient name or `'custom'`.                       |
+| `customColors`   | `object`                                                | `null`           | Primary, secondary, and hover colors for `'custom'` mode. |
+| `animationStyle` | `'stack' \| 'fan' \| 'grid'`                            | `'stack'`        | The expansion pattern behavior.                           |
+| `toggleIcon`     | `'share' \| 'message' \| 'zap' \| 'sparkles' \| 'grid'` | `'share'`        | The primary button icon variant.                          |
+| `showLabels`     | `boolean`                                               | `false`          | Displays text labels alongside platform icons.            |
+| `brandColors`    | `boolean`                                               | `false`          | Uses official platform branding colors for buttons.       |
+| `isAbsolute`     | `boolean`                                               | `false`          | Sets position to `absolute` instead of `fixed`.           |
 
 ### SocialLink Interface
 
@@ -72,20 +85,10 @@ interface SocialLink {
     | "github"
     | "whatsapp"
     | "email"
-    | "phone";
+    | "phone"
+    | "gitlab"
+    | "link";
   url: string;
   label: string;
 }
 ```
-
-## Development and Build
-
-Flochat is distributed as a tree-shakeable package. To integrate into your development workflow:
-
-```bash
-npm run build
-```
-
-## License
-
-This project is licensed under the MIT License.

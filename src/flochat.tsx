@@ -15,12 +15,14 @@ import {
     Phone, 
     Zap, 
     Sparkles, 
-    Grid3X3 
+    Grid3X3,
+    Gitlab,
+    Link
 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export interface SocialLink {
-    platform: 'instagram' | 'twitter' | 'facebook' | 'linkedin' | 'youtube' | 'github' | 'whatsapp' | 'email' | 'phone'
+    platform: 'instagram' | 'twitter' | 'facebook' | 'linkedin' | 'youtube' | 'github' | 'whatsapp' | 'email' | 'phone' | 'gitlab' | 'link'
     url: string
     label: string
 }
@@ -77,7 +79,9 @@ const PLATFORM_MAP = {
     github: { icon: Github, color: '#181717' },
     whatsapp: { icon: MessageCircle, color: '#25D366' },
     email: { icon: Mail, color: '#EA4335' },
-    phone: { icon: Phone, color: '#34A853' }
+    phone: { icon: Phone, color: '#34A853' },
+    gitlab: { icon: Gitlab, color: '#FC6D26' },
+    link: { icon: Link, color: '#64748B' }
 }
 
 const TOGGLE_ICONS = {
